@@ -1,15 +1,13 @@
 %define oname Quaternion
-%define git 20170607
 
 Summary:	An IM client for the Matrix protocol
 Name:		quaternion
-Version:	0.0.1
+Version:	0.0.9.2
 Release:	1.%{git}.1
 License:	GPLv3+
 Group:		Networking/Instant messaging
 Url:		https://github.com/QMatrixClient/Quaternion
-# git snapshot
-Source0:	%{oname}-%{version}-%{git}.tar.bz2
+Source0:	%{oname}-%{version}.tar.gz
 BuildRequires:	cmake
 BuildRequires:	pkgconfig(Qt5Core)
 BuildRequires:	pkgconfig(Qt5Gui)
