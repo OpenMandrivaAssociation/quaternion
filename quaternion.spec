@@ -3,7 +3,7 @@
 Summary:	An IM client for the Matrix protocol
 Name:		quaternion
 Version:	0.0.9.2
-Release:	1.%{git}.1
+Release:	1
 License:	GPLv3+
 Group:		Networking/Instant messaging
 Url:		https://github.com/QMatrixClient/Quaternion
@@ -25,8 +25,6 @@ An IM client for the Matrix protocol.
 %{_datadir}/applications/%{name}.desktop
 %{_iconsdir}/hicolor/*/apps/%{name}.*
 
-#----------------------------------------------------------------------------
-
 %prep
 %setup -qn %{oname}-%{version}
 
@@ -38,4 +36,3 @@ An IM client for the Matrix protocol.
 
 %install
 %makeinstall_std -C build
-
