@@ -28,7 +28,7 @@ An IM client for the Matrix protocol.
 #----------------------------------------------------------------------------
 
 %prep
-%setup -qn %{oname}-%{version}-%{git}
+%setup -qn %{oname}-%{version}
 
 %build
 %cmake \
