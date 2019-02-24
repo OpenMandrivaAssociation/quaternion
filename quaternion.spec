@@ -30,6 +30,9 @@ An IM client for the Matrix protocol.
 %{_datadir}/metainfo/com.github.quaternion.appdata.xml
 %{_iconsdir}/hicolor/*/apps/%{name}.*
 
+#QMatrixClient files. Keep it until provide QMatrixClient lib as submodule. In future make it as separate package.
+%{_datadir}/QMatrixClient/quaternion/translations/quaternion*
+
 %prep
 %setup -qn %{oname}-%{version} -a 1
 rmdir lib
