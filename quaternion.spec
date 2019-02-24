@@ -8,7 +8,7 @@ License:	GPLv3+
 Group:		Networking/Instant messaging
 Url:		https://github.com/QMatrixClient/Quaternion
 Source0:	https://github.com/QMatrixClient/Quaternion/archive/v%{version}/%{oname}-%{version}.tar.gz
-Source1:	https://github.com/QMatrixClient/libqmatrixclient/archive/v0.4.2.1.%(echo %{version}|cut -d. -f4).tar.gz
+Source1:	https://github.com/QMatrixClient/libqmatrixclient/archive/v0.4.2.1/libqmatrixclient-0.4.2.1.tar.gz
 BuildRequires:	qmake5
 BuildRequires:	cmake
 BuildRequires:	pkgconfig(Qt5Core)
