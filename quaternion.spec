@@ -37,6 +37,7 @@ mv libqmatrixclient-* lib
 
 %build
 %cmake \
+	-DUSE_INTREE_LIBQMC=1 \
 	-DBUILD_SHARED_LIBS:BOOL=OFF \
 	-DBUILD_STATIC_LIBS:BOOL=ON
 %make_build
