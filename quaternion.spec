@@ -2,13 +2,13 @@
 
 Summary:	An IM client for the Matrix protocol
 Name:		quaternion
-Version:	0.0.9.2
-Release:	2
+Version:	0.0.9.3
+Release:	1
 License:	GPLv3+
 Group:		Networking/Instant messaging
 Url:		https://github.com/QMatrixClient/Quaternion
-Source0:	https://github.com/QMatrixClient/Quaternion/archive/v0.0.9.2/%{oname}-%{version}.tar.gz
-Source1:	https://github.com/QMatrixClient/libqmatrixclient/archive/v0.3.0.%(echo %{version}|cut -d. -f4).tar.gz
+Source0:	https://github.com/QMatrixClient/Quaternion/archive/v%{version}/%{oname}-%{version}.tar.gz
+Source1:	https://github.com/QMatrixClient/libqmatrixclient/archive/v0.4.2.1.%(echo %{version}|cut -d. -f4).tar.gz
 BuildRequires:	qmake5
 BuildRequires:	cmake
 BuildRequires:	pkgconfig(Qt5Core)
