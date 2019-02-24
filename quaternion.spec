@@ -18,8 +18,7 @@ BuildRequires:	pkgconfig(Qt5Qml)
 BuildRequires:	pkgconfig(Qt5Quick)
 BuildRequires:	pkgconfig(Qt5Widgets)
 BuildRequires:	pkgconfig(Qt5QuickWidgets)
-BuildRequires:	qt5-qttranslations
-BuildRequires:	qt5-qttools
+BuildRequires:	cmake(Qt5LinguistTools)
 
 %description
 An IM client for the Matrix protocol.
@@ -40,10 +39,10 @@ mv libqmatrixclient-* lib
 %cmake \
 	-DBUILD_SHARED_LIBS:BOOL=OFF \
 	-DBUILD_STATIC_LIBS:BOOL=ON
-%make
+%make_build
 
 %install
-%makeinstall_std -C build
+%make_install -C build
 
 # We don't need the -devel files -- they're only used internally
 rm -rf %{buildroot}%{_includedir} \
