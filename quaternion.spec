@@ -2,13 +2,13 @@
 
 Summary:	An IM client for the Matrix protocol
 Name:		quaternion
-Version:	0.0.9.2
-Release:	2
+Version:	0.0.9.3
+Release:	1
 License:	GPLv3+
 Group:		Networking/Instant messaging
 Url:		https://github.com/QMatrixClient/Quaternion
-Source0:	https://github.com/QMatrixClient/Quaternion/archive/v0.0.9.2/%{oname}-%{version}.tar.gz
-Source1:	https://github.com/QMatrixClient/libqmatrixclient/archive/v0.3.0.%(echo %{version}|cut -d. -f4).tar.gz
+Source0:	https://github.com/QMatrixClient/Quaternion/archive/v%{version}/%{oname}-%{version}.tar.gz
+Source1:	https://github.com/QMatrixClient/libqmatrixclient/archive/v0.4.2.1/libqmatrixclient-0.4.2.1.tar.gz
 BuildRequires:	qmake5
 BuildRequires:	cmake
 BuildRequires:	pkgconfig(Qt5Core)
@@ -18,6 +18,7 @@ BuildRequires:	pkgconfig(Qt5Qml)
 BuildRequires:	pkgconfig(Qt5Quick)
 BuildRequires:	pkgconfig(Qt5Widgets)
 BuildRequires:	pkgconfig(Qt5QuickWidgets)
+BuildRequires:	cmake(Qt5LinguistTools)
 
 %description
 An IM client for the Matrix protocol.
@@ -29,6 +30,9 @@ An IM client for the Matrix protocol.
 %{_datadir}/metainfo/com.github.quaternion.appdata.xml
 %{_iconsdir}/hicolor/*/apps/%{name}.*
 
+#QMatrixClient files. Keep it until provide QMatrixClient lib as submodule. In future make it as separate package.
+%{_datadir}/QMatrixClient/quaternion/translations/quaternion*
+
 %prep
 %setup -qn %{oname}-%{version} -a 1
 rmdir lib
@@ -36,12 +40,13 @@ mv libqmatrixclient-* lib
 
 %build
 %cmake \
+	-DUSE_INTREE_LIBQMC=1 \
 	-DBUILD_SHARED_LIBS:BOOL=OFF \
 	-DBUILD_STATIC_LIBS:BOOL=ON
-%make
+%make_build
 
 %install
-%makeinstall_std -C build
+%make_install -C build
 
 # We don't need the -devel files -- they're only used internally
 rm -rf %{buildroot}%{_includedir} \
