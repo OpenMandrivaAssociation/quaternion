@@ -28,7 +28,7 @@ An IM client for the Matrix protocol.
 %files
 %doc COPYING README.md
 %{_bindir}/%{name}
-%{_datadir}/applications/%{name}.desktop
+%{_datadir}/applications/com.github.quaternion.desktop
 %{_datadir}/metainfo/com.github.quaternion.appdata.xml
 %{_iconsdir}/hicolor/*/apps/%{name}.*
 
