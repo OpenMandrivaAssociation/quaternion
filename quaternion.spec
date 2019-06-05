@@ -36,7 +36,7 @@ An IM client for the Matrix protocol.
 %prep
 %setup -qn %{oname}-%{version} -a 1
 rmdir lib
-mv libqmatrixclient-* lib
+mv libQuotient-* lib
 
 %build
 %cmake \
