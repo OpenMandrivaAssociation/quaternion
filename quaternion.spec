@@ -24,6 +24,7 @@ BuildRequires:	pkgconfig(Qt5QuickWidgets)
 BuildRequires:	pkgconfig(Qt5Test)
 BuildRequires:	cmake(Qt5LinguistTools)
 BuildRequires:	cmake(Qt5Keychain)
+BuildRequires:	cmake(Qt5QuickControls2)
 
 %description
 An IM client for the Matrix protocol.
@@ -34,9 +35,9 @@ An IM client for the Matrix protocol.
 %{_datadir}/applications/com.github.quaternion.desktop
 %{_datadir}/metainfo/com.github.quaternion.appdata.xml
 %{_iconsdir}/hicolor/*/apps/%{name}.*
-
-#QMatrixClient files. Keep it until provide QMatrixClient lib as submodule. In future make it as separate package.
-%{_datadir}/QMatrixClient/quaternion/translations/quaternion*
+%dir %{_datadir}/Quotient
+%dir %{_datadir}/Quotient/quaternion
+%{_datadir}/Quotient/quaternion/translations
 
 %prep
 %autosetup -n %{oname}-%{version}-%{beta} -a 1 -p1
@@ -58,4 +59,7 @@ mv libQuotient-* lib
 rm -rf %{buildroot}%{_includedir} \
 	%{buildroot}%{_bindir}/qmc-example \
 	%{buildroot}%{_libdir}/*.a \
-	%{buildroot}%{_libdir}/cmake
+	%{buildroot}%{_libdir}/cmake \
+	%{buildroot}%{_libdir}/pkgconfig \
+	%{buildroot}%{_datadir}/ndk-modules \
+	%{buildroot}%{_bindir}/quotest
