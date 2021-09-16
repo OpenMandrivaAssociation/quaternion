@@ -1,15 +1,15 @@
 %define oname Quaternion
-%define beta rc2
+%define beta rc4
 
 Summary:	An IM client for the Matrix protocol
 Name:		quaternion
 Version:	0.0.95
-Release:	0.%{beta}.2
+Release:	0.%{beta}.3
 License:	GPLv3+
 Group:		Networking/Instant messaging
 Url:		https://github.com/quotient-im/Quaternion
 Source0:	https://github.com/quotient-im/Quaternion/archive/v%{version}/%{oname}-%{version}-%{beta}.tar.gz
-Source1:	https://github.com/quotient-im/libQuotient/archive/0.6.6/libQuotient-0.6.8.tar.gz
+Source1:	https://github.com/quotient-im/libQuotient/archive/0.6.9/libQuotient-0.6.9.tar.gz
 BuildRequires:	qmake5
 BuildRequires:	cmake
 BuildRequires:	pkgconfig(Qt5Core)
