@@ -14,6 +14,7 @@ BuildRequires:	qmake-qt6
 BuildRequires:	cmake
 BuildRequires:	cmake(Qt6)
 BuildRequires:	cmake(Qt6Core)
+BuildRequires:	cmake(Qt6Concurrent)
 BuildRequires:	cmake(Qt6DBus)
 BuildRequires:	cmake(Qt6Gui)
 BuildRequires:	cmake(Qt6Multimedia)
