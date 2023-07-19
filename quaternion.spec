@@ -32,7 +32,7 @@ BuildRequires:	cmake(Qt6QuickControls2)
 An IM client for the Matrix protocol.
 
 %files
-%doc COPYING README.md
+%doc README.md
 %{_bindir}/%{name}
 %{_datadir}/applications/com.github.quaternion.desktop
 %{_datadir}/metainfo/com.github.quaternion.appdata.xml
