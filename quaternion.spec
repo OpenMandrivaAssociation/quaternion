@@ -26,6 +26,7 @@ BuildRequires:	cmake(Qt6Test)
 BuildRequires:	cmake(Qt6LinguistTools)
 #BuildRequires:	cmake(Qt5Keychain)
 BuildRequires:	cmake(Qt6QuickControls2)
+BuildRequires:	qtkeychain-lib64Qt6keychain-devel
 
 %description
 An IM client for the Matrix protocol.
