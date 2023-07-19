@@ -47,6 +47,8 @@ rmdir lib
 mv libQuotient-* lib
 
 %build
+export CC=gcc
+export CXX=g++
 %cmake \
 	-DUSE_INTREE_LIBQMC=ON \
 	-DBUILD_SHARED_LIBS:BOOL=OFF \
