@@ -3,34 +3,40 @@
 
 Summary:	An IM client for the Matrix protocol
 Name:		quaternion
-Version:	0.0.95.1
-Release:	2
+Version:	0.0.96
+Release:	0.beta3.1
 License:	GPLv3+
 Group:		Networking/Instant messaging
 Url:		https://github.com/quotient-im/Quaternion
-Source0:	https://github.com/quotient-im/Quaternion/archive/v%{version}/%{oname}-%{version}.tar.gz
-Source1:	https://github.com/quotient-im/libQuotient/archive/0.6.11/libQuotient-0.6.11.tar.gz
-BuildRequires:	qmake5
+Source0:	https://github.com/quotient-im/Quaternion/archive/v%{version}/%{oname}-%{version}-beta3.tar.gz
+Source1:	https://github.com/quotient-im/libQuotient/archive/0.8.0/libQuotient-0.8.0.tar.gz
+BuildRequires:	qmake-qt6
 BuildRequires:	cmake
-BuildRequires:	pkgconfig(Qt5Core)
-BuildRequires:	pkgconfig(Qt5DBus)
-BuildRequires:	pkgconfig(Qt5Gui)
-BuildRequires:	pkgconfig(Qt5Multimedia)
-BuildRequires:	pkgconfig(Qt5Network)
-BuildRequires:	pkgconfig(Qt5Qml)
-BuildRequires:	pkgconfig(Qt5Quick)
-BuildRequires:	pkgconfig(Qt5Widgets)
-BuildRequires:	pkgconfig(Qt5QuickWidgets)
-BuildRequires:	pkgconfig(Qt5Test)
-BuildRequires:	cmake(Qt5LinguistTools)
-BuildRequires:	cmake(Qt5Keychain)
-BuildRequires:	cmake(Qt5QuickControls2)
+BuildRequires:	cmake(Qt6)
+BuildRequires:	cmake(Qt6Core)
+BuildRequires:	cmake(Qt6Concurrent)
+BuildRequires:	cmake(Qt6DBus)
+BuildRequires:	cmake(Qt6Gui)
+BuildRequires:	cmake(Qt6Multimedia)
+BuildRequires:	cmake(Qt6Network)
+BuildRequires:	cmake(Qt6Qml)
+BuildRequires:	cmake(Qt6Quick)
+BuildRequires:	cmake(Qt6Widgets)
+BuildRequires:	cmake(Qt6QuickWidgets)
+BuildRequires:	cmake(Qt6Test)
+BuildRequires:	cmake(Qt6LinguistTools)
+BuildRequires:	cmake(Qt6Keychain)
+BuildRequires:	cmake(Qt6QuickControls2)
+BuildRequires:	cmake(VulkanHeaders)
+BuildRequires:	pkgconfig(xkbcommon-x11)
+BuildRequires:	pkgconfig(xkbcommon)
+BuildRequires:	qt6-qtmultimedia-gstreamer
 
 %description
 An IM client for the Matrix protocol.
 
 %files
-%doc COPYING README.md
+%doc README.md
 %{_bindir}/%{name}
 %{_datadir}/applications/com.github.quaternion.desktop
 %{_datadir}/metainfo/com.github.quaternion.appdata.xml
@@ -40,11 +46,13 @@ An IM client for the Matrix protocol.
 %{_datadir}/Quotient/quaternion/translations
 
 %prep
-%autosetup -n %{oname}-%{version} -a 1 -p1
+%autosetup -n %{oname}-%{version}-beta3 -a 1 -p1
 rmdir lib
 mv libQuotient-* lib
 
 %build
+export CC=gcc
+export CXX=g++
 %cmake \
 	-DUSE_INTREE_LIBQMC=ON \
 	-DBUILD_SHARED_LIBS:BOOL=OFF \
