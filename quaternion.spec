@@ -27,6 +27,10 @@ BuildRequires:	cmake(Qt6Test)
 BuildRequires:	cmake(Qt6LinguistTools)
 BuildRequires:	cmake(Qt6Keychain)
 BuildRequires:	cmake(Qt6QuickControls2)
+BuildRequires:	cmake(VulkanHeaders)
+BuildRequires:	pkgconfig(xkbcommon-x11)
+BuildRequires:	pkgconfig(xkbcommon)
+BuildRequires:	qt6-qtmultimedia-gstreamer
 
 %description
 An IM client for the Matrix protocol.
