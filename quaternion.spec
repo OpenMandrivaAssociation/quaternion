@@ -4,11 +4,11 @@
 Summary:	An IM client for the Matrix protocol
 Name:		quaternion
 Version:	0.0.96
-Release:	0.beta3.1
+Release:	0.beta4.1
 License:	GPLv3+
 Group:		Networking/Instant messaging
 Url:		https://github.com/quotient-im/Quaternion
-Source0:	https://github.com/quotient-im/Quaternion/archive/v%{version}/%{oname}-%{version}-beta3.tar.gz
+Source0:	https://github.com/quotient-im/Quaternion/archive/v%{version}/%{oname}-%{version}-beta4.tar.gz
 Source1:	https://github.com/quotient-im/libQuotient/archive/0.8.0/libQuotient-0.8.0.tar.gz
 BuildRequires:	qmake-qt6
 BuildRequires:	cmake
@@ -46,7 +46,7 @@ An IM client for the Matrix protocol.
 %{_datadir}/Quotient/quaternion/translations
 
 %prep
-%autosetup -n %{oname}-%{version}-beta3 -a 1 -p1
+%autosetup -n %{oname}-%{version}-beta4 -a 1 -p1
 rmdir lib
 mv libQuotient-* lib
 
