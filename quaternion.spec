@@ -19,7 +19,10 @@ BuildRequires:	cmake(Qt6DBus)
 BuildRequires:	cmake(Qt6Gui)
 BuildRequires:	cmake(Qt6Multimedia)
 BuildRequires:	cmake(Qt6Network)
+BuildRequires:  cmake(Qt6Sql)
 BuildRequires:	cmake(Qt6Qml)
+BuildRequires:  cmake(Qt6QmlCore)
+BuildRequires:  cmake(Qt6QmlNetwork)
 BuildRequires:	cmake(Qt6Quick)
 BuildRequires:	cmake(Qt6Widgets)
 BuildRequires:	cmake(Qt6QuickWidgets)
@@ -31,6 +34,7 @@ BuildRequires:	cmake(VulkanHeaders)
 BuildRequires:	pkgconfig(xkbcommon-x11)
 BuildRequires:	pkgconfig(xkbcommon)
 BuildRequires:	qt6-qtmultimedia-gstreamer
+BuildRequires:  qt6-qtbase-theme-gtk3
 
 %description
 An IM client for the Matrix protocol.
