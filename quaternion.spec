@@ -19,6 +19,8 @@ BuildRequires:	cmake(Qt6DBus)
 BuildRequires:	cmake(Qt6Gui)
 BuildRequires:	cmake(Qt6Multimedia)
 BuildRequires:	cmake(Qt6Network)
+BuildRequires:  cmake(Olm)
+BuildRequires:  cmake(QtOlm)
 BuildRequires:  cmake(Qt6Sql)
 BuildRequires:	cmake(Qt6Qml)
 BuildRequires:  cmake(Qt6QmlCore)
@@ -35,6 +37,10 @@ BuildRequires:	pkgconfig(xkbcommon-x11)
 BuildRequires:	pkgconfig(xkbcommon)
 BuildRequires:	qt6-qtmultimedia-gstreamer
 BuildRequires:  qt6-qtbase-theme-gtk3
+BuildRequires:	qt6-qtbase-sql-postgresql
+BuildRequires:	qt6-qtbase-sql-odbc
+BuildRequires:	qt6-qtbase-sql-mariadb
+BuildRequires:	qt6-qtbase-sql-firebird
 
 %description
 An IM client for the Matrix protocol.
