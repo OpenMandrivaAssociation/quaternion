@@ -4,12 +4,12 @@
 Summary:	An IM client for the Matrix protocol
 Name:		quaternion
 Version:	0.0.96
-Release:	0.beta4.1
+Release:	1
 License:	GPLv3+
 Group:		Networking/Instant messaging
 Url:		https://github.com/quotient-im/Quaternion
-Source0:	https://github.com/quotient-im/Quaternion/archive/v%{version}/%{oname}-%{version}-beta4.tar.gz
-Source1:	https://github.com/quotient-im/libQuotient/archive/0.8.0/libQuotient-0.8.0.tar.gz
+Source0:	https://github.com/quotient-im/Quaternion/archive/v%{version}/%{oname}-%{version}.tar.gz
+Source1:	https://github.com/quotient-im/libQuotient/archive/0.8.1.2/libQuotient-0.8.1.2.tar.gz
 BuildRequires:	qmake-qt6
 BuildRequires:	cmake
 BuildRequires:	cmake(Qt6)
@@ -19,7 +19,12 @@ BuildRequires:	cmake(Qt6DBus)
 BuildRequires:	cmake(Qt6Gui)
 BuildRequires:	cmake(Qt6Multimedia)
 BuildRequires:	cmake(Qt6Network)
+BuildRequires:  cmake(Olm)
+BuildRequires:  cmake(QtOlm)
+BuildRequires:  cmake(Qt6Sql)
 BuildRequires:	cmake(Qt6Qml)
+BuildRequires:  cmake(Qt6QmlCore)
+BuildRequires:  cmake(Qt6QmlNetwork)
 BuildRequires:	cmake(Qt6Quick)
 BuildRequires:	cmake(Qt6Widgets)
 BuildRequires:	cmake(Qt6QuickWidgets)
@@ -27,10 +32,16 @@ BuildRequires:	cmake(Qt6Test)
 BuildRequires:	cmake(Qt6LinguistTools)
 BuildRequires:	cmake(Qt6Keychain)
 BuildRequires:	cmake(Qt6QuickControls2)
+BuildRequires:  pkgconfig(openssl)
 BuildRequires:	cmake(VulkanHeaders)
 BuildRequires:	pkgconfig(xkbcommon-x11)
 BuildRequires:	pkgconfig(xkbcommon)
 BuildRequires:	qt6-qtmultimedia-gstreamer
+BuildRequires:  qt6-qtbase-theme-gtk3
+BuildRequires:	qt6-qtbase-sql-postgresql
+BuildRequires:	qt6-qtbase-sql-odbc
+BuildRequires:	qt6-qtbase-sql-mariadb
+BuildRequires:	qt6-qtbase-sql-firebird
 
 %description
 An IM client for the Matrix protocol.
@@ -46,7 +57,7 @@ An IM client for the Matrix protocol.
 %{_datadir}/Quotient/quaternion/translations
 
 %prep
-%autosetup -n %{oname}-%{version}-beta4 -a 1 -p1
+%autosetup -n %{oname}-%{version} -a 1 -p1
 rmdir lib
 mv libQuotient-* lib
 
