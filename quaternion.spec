@@ -3,7 +3,7 @@
 
 Summary:	An IM client for the Matrix protocol
 Name:		quaternion
-Version:	0.0.96
+Version:	0.0.96.1
 Release:	1
 License:	GPLv3+
 Group:		Networking/Instant messaging
