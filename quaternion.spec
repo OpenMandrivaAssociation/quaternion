@@ -49,8 +49,8 @@ An IM client for the Matrix protocol.
 %files
 %doc README.md
 %{_bindir}/%{name}
-#{_datadir}/applications/com.github.quaternion.desktop
-#{_datadir}/metainfo/com.github.quaternion.appdata.xml
+%{_datadir}/applications/io.github.quotient_im.Quaternion.desktop
+%{_datadir}/metainfo/io.github.quotient_im.Quaternion.appdata.xml
 %{_iconsdir}/hicolor/*/apps/%{name}.*
 %dir %{_datadir}/Quotient
 %dir %{_datadir}/Quotient/quaternion
